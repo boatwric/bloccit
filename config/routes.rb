@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'welcome/contact'
 
+  get 'welcome/faq'
+
   root 'welcome#index'#root method allows us to declare the default page; index will be the first thing we see
 
 end
