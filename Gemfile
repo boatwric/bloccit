@@ -18,7 +18,8 @@ source 'https://rubygems.org'
  # #2
  group :development do
    # Use sqlite3 as the development database for Active Record
-   gem 'sqlite3'
+   gem 'sqlite3' #flexible, lightweight database
+   gem 'pry-rails' #use pry instead of standard IRB shell
  end
 
 group :development, :test do
