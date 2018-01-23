@@ -13,14 +13,14 @@
     
     <div class="container">
       <ul class="nav nav-tabs">
-        <li><%= link_to "Home", welcome_index_path %></li> <!--link_to works a lot like an a tag; <call method, text to print, route (which you can find with rake routes command in terminal>-->
-        <li><%= link_to "About", welcome_about_path %></li>
-        <li><%= link_to "FAQ", welcome_faq_path %></li>
-        <li><%= link_to "Contact", welcome_contact_path %></li>
+        <li><%= link_to "Bloccit", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
       </ul>
 
       <%=yield%>
 
     </div>  
-  </body>
+  
+    </body>
+
 </html>
