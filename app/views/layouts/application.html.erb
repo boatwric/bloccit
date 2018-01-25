@@ -1,26 +1,45 @@
+<!--Will always render in app, no matter the particular view-->
+
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Bloccit</title>
     <%= csrf_meta_tags %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    
+<body>
+
     <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Bloccit", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-      </ul>
+        <ul class="nav nav-tabs">
+            <li>
+                <%= link_to "Bloccit", root_path %>
+            </li>
+            <li>
+                <%= link_to "About", about_path %>
+            </li>
+        </ul>
 
-      <%=yield%>
+        <!--For more info on alert, close, and the like: https://getbootstrap.com/docs/3.3/javascript/-->
+        <% if flash[:notice] %>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <%= flash[:notice] %>
+            </div>
+            <% elsif flash[:alert] %>
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= flash[:alert] %>
+                </div>
+                <% end %>
+                    <%=yield%>
 
-    </div>  
-  
-    </body>
+    </div>
+
+</body>
 
 </html>
