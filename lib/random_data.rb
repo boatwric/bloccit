@@ -28,7 +28,15 @@ module RandomData #modules have no dependencies or inheritence requirements; com
         letters.shuffle!
         letters[0,rand(3..8)].join
       end
+
+    def self.random_number
+      numbers = ('1'..'9').to_a
+      numbers.shuffle!
+      numbers[0,rand(1..3)].join
     end
+  
+  end
+
 
     #To make accessible to specs: 
         ##add line to application.rb -> config.autoload_paths << File.join(config.root, "lib")
