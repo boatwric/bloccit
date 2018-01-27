@@ -7,3 +7,6 @@ Rails.application.routes.draw do
   root 'welcome#index'#root method allows us to declare the default page; index will be the first thing we see
 
 end
+
+#TO GET ALL ROUTES IN TERMINAL...
+  ##rake routes
