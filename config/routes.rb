@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :questions
+  
   resources :posts #call the resources method and pass it a symbol; instructs Rails to create post routes for creating, updating, viewing, and deleting instances of Post
 
   get 'about' => 'welcome#about' #remove get "welcome/index" because we've declared the index view as the root view; also modify the about route to allow users to visit /about, rather than /welcome/about

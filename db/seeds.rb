@@ -15,18 +15,26 @@ end
 posts = Post.all
  
 # Create Comments
-# #3
 100.times do
     Comment.create!(
- # #4
         post: posts.sample, #we call sample on the array returned by Post.all, picks a random post to associate each comment with, sample returns a random element from the array every time it's called
         body: RandomData.random_paragraph
     )
  end
+
+ 25.times do
+    Question.create!(
+        title: RandomData.random_sentence,
+        body: RandomData.random_paragraph,
+        resolved: RandomData.random_boolean
+    )
+ end
+
  
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ puts "#{Question.count} questions created"
 
  #To run:
     ##rake db:seed

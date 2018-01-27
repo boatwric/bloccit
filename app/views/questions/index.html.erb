@@ -1,0 +1,17 @@
+<!--Index view: shows question titles and links to them, @questions defined in app/controllers/questions_controller.rb-->
+
+<h1>All Questions</h1>
+<!--iterate over each question in @questions, create a link with the questions's title that links to its id-->
+<% @questions.each do |question| %>
+    <div class="media">
+        <!--bootstrap media class info: https://www.w3schools.com/bootstrap/bootstrap_media_objects.asp-->
+        <div class="media-body">
+            <h4 class="media-heading">
+                <%= link_to question.title, question %>
+                    <!--call link_to with the object to which we're linking as a second argument, the  link_to method will detect the object, parse its id, and create the path using the id-->
+            </h4>
+        </div>
+    </div>
+    <% end %>
+
+        <!--Check on route using rails routes | grep 'questions#show'-->
