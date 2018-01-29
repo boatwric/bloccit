@@ -3,7 +3,8 @@
 require 'rails_helper' #need rails-helper for this to work
 
 RSpec.describe Comment, type: :model do
-  let(:post) { Post.create!(title: "New Post Title", body: "New Post Body") } #let :post be a new instance of the Post class which gets tested
+  let(:topic) { Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph) } #creates a parent topic
+  let(:post) { topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph) } #associates post with topic; uses topic.post.create! chain method
   let(:comment) { Comment.create!(body: 'Comment Body', post: post) } #let :commment be a new instance of the Comment class that references the post just created
 
   describe "attributes" do

@@ -25,6 +25,7 @@ source 'https://rubygems.org'
 group :development, :test do
    gem 'rspec-rails', '~> 3.0' #maintain predictable behavior despite new rspec releases
    gem 'rails-controller-testing'
+   gem 'shoulda' #helps write association tests not available in rspec
 end
  
  # Use Puma as the app server
