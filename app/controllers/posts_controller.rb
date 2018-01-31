@@ -60,7 +60,6 @@ class PostsController < ApplicationController
     
     @post = Post.find(params[:id]) #find @post by the post's id
 
-# #8
     if @post.destroy #destroy is like the opposite of generate; don't have to enter in the title and body, just find the id and Rails will do the rest
       flash[:notice] = "\"#{@post.title}\" was deleted successfully."
       #when post is deleted, redirect to topic show view
