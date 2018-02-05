@@ -7,30 +7,30 @@ module RandomData #modules have no dependencies or inheritence requirements; com
         rand(4..6).times do
           sentences << random_sentence
         end
-    
+
         sentences.join(" ")
       end
-    
+
     # #7
       def self.random_sentence #RandomData.random_sentence -> make a strings array, use loop to create 3 to 8 random words (method below) and add to strings array, then join strings and capitalize each word
         strings = []
-        rand(3..8).times do
+        rand(20..30).times do
           strings << random_word
         end
-    
+
         sentence = strings.join(" ")
         sentence.capitalize << "."
       end
-    
+
     # #8
       def self.random_word #RandomData.random_word -> create letter array by specifying a to z to array, shuffle letters (! permanently changes order in letter array), join the 1st through nth items to make a word (can be up to 9 characters)
         letters = ('a'..'z').to_a
         letters.shuffle!
-        letters[0,rand(3..8)].join
+        letters[0,rand(4..8)].join
       end
     end
 
-    #To make accessible to specs: 
+    #To make accessible to specs:
         ##add line to application.rb -> config.autoload_paths << File.join(config.root, "lib")
     #To run:
         ##rails db:reset
@@ -41,6 +41,3 @@ module RandomData #modules have no dependencies or inheritence requirements; com
         ##Comment.count
         ##post = Post.first
         ##post = Post.last
-        
-
-   
