@@ -1,7 +1,6 @@
 <!--Partial for post views; underscore before file name lets rails know it's a partial-->
 <!--Partials can use instance variables, but for cleanliness and reusability it's better to use locals -->
 
-<!--Example of calling partial belowe in another view: <%= render partial: 'form', locals: { topic: @post.topic, post: @post } %> -->
 <%= form_for [topic, post] do |f| %>
     <% if post.errors.any? %>
 
