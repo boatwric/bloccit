@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :posts, except: [:index]
   end
 
+  #create user routes for new and create actions; only hash key will prevent Rails from creating unnecessary routes
+  resources :users, only: [:new, :create]
+
   get 'about' => 'welcome#about' #remove get "welcome/index" because we've declared the index view as the root view; also modify the about route to allow users to visit /about, rather than /welcome/about
 
   root 'welcome#index'#root method allows us to declare the default page; index will be the first thing we see
@@ -16,3 +19,7 @@ end
 
 #TO GET ALL ROUTES IN TERMINAL...
   ##rails routes
+#TO GET TOPICS ROUTES
+  ##rails routes | grep topics
+#TO GET USER ROUTES
+  ##rails routes | grep user
