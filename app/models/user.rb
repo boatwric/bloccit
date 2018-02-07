@@ -6,6 +6,17 @@
 class User < ApplicationRecord
   #before_save callback followed by inline callback; assigns User.email a downcased version after it checks if anything was input
   before_save { self.email = email.downcase if email.present? }
+  before_save {
+    #create empty array
+    name_array = []
+    #Turn name to string, split (which splits at space), each loop for each part (word)
+    name.to_s.split.each do |part|
+      #each part capitalized, then pushed to name_array
+      name_array << part.capitalize
+    end
+    #Join name_array, assign it to User.name
+    self.name = name_array.join(" ")
+    }
 
   #checks for name between 1 and 100 characters
   validates :name,
