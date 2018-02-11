@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #create user routes for new and create actions; only hash key will prevent Rails from creating unnecessary routes
   resources :users, only: [:new, :create]
 
+  post 'users/confirm' => 'users#confirm'
+
   get 'about' => 'welcome#about' #remove get "welcome/index" because we've declared the index view as the root view; also modify the about route to allow users to visit /about, rather than /welcome/about
 
   root 'welcome#index'#root method allows us to declare the default page; index will be the first thing we see
