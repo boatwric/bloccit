@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     #save the new user to the database; add a flash message and redirect the user to the root path if save successful, display error and render new view if not
     if @user.save
       flash[:notice] = "Welcome to Bloccit #{@user.name}!"
+      create_session(@user)
       redirect_to root_path
     else
       flash.now[:alert] = "There was an error creating your account. Please try again."

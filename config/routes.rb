@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #create user routes for new and create actions; only hash key will prevent Rails from creating unnecessary routes
   resources :users, only: [:new, :create]
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   post 'users/confirm' => 'users#confirm'
 
   get 'about' => 'welcome#about' #remove get "welcome/index" because we've declared the index view as the root view; also modify the about route to allow users to visit /about, rather than /welcome/about
@@ -25,3 +27,5 @@ end
   ##rails routes | grep topics
 #TO GET USER ROUTES
   ##rails routes | grep user
+#TO GET SESSION ROUTES
+    ##rails routes | grep session
